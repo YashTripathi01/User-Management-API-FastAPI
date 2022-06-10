@@ -1,4 +1,3 @@
-from dataclasses import field
 from pydantic import BaseModel, EmailStr
 from marshmallow import Schema, fields
 from typing import List, Optional
