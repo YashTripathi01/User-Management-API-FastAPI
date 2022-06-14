@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+    api:
+        build: .
+        volumes: 
+            - ./:/code/oi_analytics/
+        ports: 
+            - "3000:3000"
+        depends_on: 
+            - db
+
+    db:
+        image: mysql:8.0.29
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=OIAnalytics
+        volumes: 
+            - docker_db:/var/lib/mysql
+        ports: 
+            - "3307:3306"
+        expose: 
+            - "3306"
+
+volumes:
+    docker_db:
