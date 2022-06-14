@@ -3,7 +3,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 # generate password hash
 def hash(password: str):
-    print('==hash==')
     return generate_password_hash(password)
 
 

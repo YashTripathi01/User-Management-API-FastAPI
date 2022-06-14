@@ -1,14 +1,17 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from .database.database import engine
 from .models import models
 from .routes.authentication import login, reset_password
 from .routes.users import add_user, get_user, update_user, delete_user, get_supervisor
 from .routes.company import add_company, get_company, update_company, delete_company
-from fastapi.middleware.cors import CORSMiddleware
+from .initial_setup import initial_setup
 
 models.Base.metadata.create_all(bind=engine)
 
-origins = ['http://localhost:3000']
+initial_setup()
+
+origins = ['*']
 
 app = FastAPI()
 
