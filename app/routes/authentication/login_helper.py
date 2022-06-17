@@ -24,6 +24,6 @@ def login_user(request):
             status_code=HTTPStatus.UNAUTHORIZED, detail=INVALID_CREDENTIALS)
 
     access_token = oauth.create_access_token(data={'id': user.id, 'email': user.email, 'co_id': user.co_id, 'first_name': user.first_name,
-                                             'last_name': user.last_name, 'role_id': user.role_id, 'contact_no': user.contact_no, 'working_under': user.working_under})
+                                             'last_name': user.last_name, 'role_id': user.role_id, 'contact_no': user.contact_no, 'working_under': user.working_under, 'company_id': user.co_id})
 
-    return {'access_token': access_token, 'token_type': 'bearer'}
+    return {'access_token': access_token, 'token_type': 'bearer', 'message': LOGIN}

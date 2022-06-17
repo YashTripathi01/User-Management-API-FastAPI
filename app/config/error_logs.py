@@ -10,6 +10,7 @@ USER_UNAUTHORIZED = 'Not authorized to perform the following action'
 USER_NOT_FOUND = 'User not found'
 USER_ALREADY_EXISTS = 'User is already registered'
 USER_INACTIVE = 'User is inactive'
+LOGIN = 'Successfully logged in'
 
 
 ADD_COMPANY = 'Company added successfully'
